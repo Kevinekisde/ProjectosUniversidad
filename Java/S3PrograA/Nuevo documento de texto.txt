@@ -1,0 +1,15 @@
+se creara un codigo basado en una tienda de componentes electronicos y creaciones de pc donde
+se introducira uno por uno el hardaware a usar para la creacion del pc y mostrara el valor final de la cotizacion
+
+
+falta: que el programa sume todos los precios de los componentes , y nose que mas xd
+
+
+
+
+procesador
+fuente de poder
+placa madre
+ram
+gabinete
+tarjeta de video
