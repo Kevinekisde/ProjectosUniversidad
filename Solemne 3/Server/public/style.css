@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Poppins',sans-serif;
+}
+
+.body{
+    min-height: 100vh;
+    background: linear-gradient(#2b1055,#7597de);
+}
+.banner{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(Fondo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 90%;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.logo{
+    width: 100px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #17b681;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+
+}
+
+
+.contenido{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: rgb(230, 227, 227);
+}
+
+.contenido h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+.contenido p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.banner::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#1c0522,transparent);
+    z-index: 1000;
+}
+
+.p2{
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+    color: #ffff;
+}
+.p2 h1{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.p2 input{
+    display: block;
+    border: 0;
+    font-size: 16px;
+    padding: 16px 30px;
+    border-radius: 20px;
+    background: rgb(45, 65, 247);
+    color: rgb(248, 248, 248);
+    cursor: pointer;
+    transition: all 0.2 linear;
+}

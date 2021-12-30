@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>Monitoreo</title>
+    <link rel="icon" href="icono.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="/socket.io/socket.io.js" charset="utf-8" ></script>
+    <script>
+        function recibir(){
+        var socket=io();
+        socket.on('canal1',function(data){
+        console.log(data);
+        document.getElementById("caja1").value=data;
+            if (data<50){
+                document.getElementById('botella').src ="bov.png";
+            }
+            if(data>=50){
+                document.getElementById('botella').src="Bs.png";
+            }
+            if(data>=80){
+                document.getElementById('botella').src='Bt.png';
+            }
+        });
+        socket.on('canal2',function(data){
+            console.log(data);
+            document.getElementById("caja2").value=data;
+        });
+        socket.on('canal3',function(data){
+            console.log(data);
+            document.getElementById("caja3").value=data;
+        });
+    }
+    </script>
+</head>
+<body>
+    <body onload="recibir();"></body>
+    <script src="/socket.io/socket.io.js" charset="utf-8" ></script>
+    <script src="server.js" charset="utf-8"></script>
+    <div class="banner">
+        <div class="navbar">
+        <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="https://www.instagram.com/uautonomadechile/?hl=es">Instagram</a></li>
+                <li><a href="https://www.facebook.com/uautonomadechile/">Facebook</a></li>
+                <li><a href="https://www.uautonoma.cl/">Pagina Oficial</a></li>
+            </ul>
+        </div>
+        <div class='contenido'>
+            <h1 id="titulo">Taller aplicacion Informatica</h1>
+            <p id="int">Integrante: Kevin leiva,Thomas contreras,Juan pablo Grez</p>
+        </div>
+    </div>
+    <script>
+        let titulo = document.getElementById('titulo');
+        let int = document.getElementById('int');
+
+        window.addEventListener('scroll', function (){
+            let value = window.scrollY;
+            titulo.style.marginTop = value * 1 + 'px';
+
+        })
+    </script>
+
+
+    <div class="p2">
+        <h1>Proceso sellado</h1>
+        <br>
+        <br>
+        <center><img src="bov.png" input type="image" id="botella" height="200" width="80"> </center>
+        <br>
+        <h2>Sensores:</h2>
+        <p>Sensor UDP<input id="caja1"size="10">
+            Sensor TCP<input id="caja2" size="10">
+            Sensor RCP<input id="caja3"size="10">
+    </div>
+</body>
+</html>
